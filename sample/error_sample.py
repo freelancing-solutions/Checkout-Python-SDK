@@ -13,13 +13,13 @@ class CreateError(PayPalClient):
         body = {}
         request = OrdersCreateRequest()
         request.request_body(body)
-        print "Request Body:", body, "\n"
-        print "Response:"
+        print ("Request Body:", body, "\n")
+        print ("Response:")
         try:
             response = self.client.execute(request)
         except HttpError as h:
-            print "Status Code:", h.status_code
-            print self.pretty_print(h.message)
+            print("Status Code:", h.status_code)
+            print(self.pretty_print(h.message))
 
     def create_error_2(self):
         """
@@ -40,18 +40,18 @@ class CreateError(PayPalClient):
             }
         request = OrdersCreateRequest()
         request.request_body(body)
-        print "Request Body:\n", json.dumps(body, indent=4), "\n"
-        print "Response:"
+        print( "Request Body:\n", json.dumps(body, indent=4), "\n")
+        print ("Response:")
         response = ""
         try:
             response = self.client.execute(request)
         except HttpError as h:
-            print "Status Code: ", h.status_code
-            print self.pretty_print(h.message)
+            print ("Status Code: ", h.status_code)
+            print (h.message)
 
 
-print "Calling create_error_1 (Body has no required parameters (intent, purchase_units))"
+print("Calling create_error_1 (Body has no required parameters (intent, purchase_units))")
 CreateError().create_error_1()
 
-print "\nExecuting create_error_2 (Body has invalid parameter value for intent)"
+print("\nExecuting create_error_2 (Body has invalid parameter value for intent)")
 CreateError().create_error_2()

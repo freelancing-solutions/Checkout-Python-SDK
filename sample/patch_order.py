@@ -40,19 +40,19 @@ class PatchOrder(PayPalClient):
         request.request_body(self.build_request_body())
         self.client.execute(request)
         response = self.client.execute(OrdersGetRequest(order.id))
-        print 'Order ID: ', response.result.id
-        print 'Intent: ', response.result.intent
-        print 'Links:'
+        print('Order ID: ', response.result.id)
+        print('Intent: ', response.result.intent)
+        print('Links:')
         for link in response.result.links:
             print('\t{}: {}\tCall Type: {}'.format(link.rel, link.href, link.method))
-        print 'Gross Amount: {} {}'.format(response.result.purchase_units[0].amount.currency_code,
-                                           response.result.purchase_units[0].amount.value)
+        print ('Gross Amount: {} {}'.format(response.result.purchase_units[0].amount.currency_code,
+                                           response.result.purchase_units[0].amount.value))
         json_data = self.object_to_json(response.result)
-        print "json_data: ", json.dumps(json_data,indent=4)
+        print("json_data: ", json.dumps(json_data,indent=4))
+
 
 if __name__ == "__main__":
-    print 'Before PATCH:'
+    print('Before PATCH:')
     createResponse = CreateOrder().create_order(True)
     order = createResponse.result
-    print '\nAfter PATCH (Changed Intent and Amount):'
-    PatchOrder().patch_order(order.id)
+    print('\nAfter PATCH (Changed Intent and Amount):', PatchOrder().patch_order(order.id))
