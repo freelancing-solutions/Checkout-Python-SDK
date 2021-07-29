@@ -13,8 +13,8 @@ class CreateError(PayPalClient):
         body = {}
         request = OrdersCreateRequest()
         request.request_body(body)
-        print ("Request Body:", body, "\n")
-        print ("Response:")
+        print("Request Body:", body, "\n")
+        print("Response:")
         try:
             response = self.client.execute(request)
         except HttpError as h:
@@ -31,23 +31,23 @@ class CreateError(PayPalClient):
                 "purchase_units": [
                     {
                         "amount":
-                        {
-                            "currency_code": "USD",
-                            "value": "100.00"
-                        }
+                            {
+                                "currency_code": "USD",
+                                "value": "100.00"
+                            }
                     }
                 ]
             }
         request = OrdersCreateRequest()
         request.request_body(body)
-        print( "Request Body:\n", json.dumps(body, indent=4), "\n")
-        print ("Response:")
+        print("Request Body:\n", json.dumps(body, indent=4), "\n")
+        print("Response:")
         response = ""
         try:
             response = self.client.execute(request)
         except HttpError as h:
-            print ("Status Code: ", h.status_code)
-            print (h.message)
+            print("Status Code: ", h.status_code)
+            print(h.message)
 
 
 print("Calling create_error_1 (Body has no required parameters (intent, purchase_units))")

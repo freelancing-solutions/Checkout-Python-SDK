@@ -9,8 +9,7 @@ class AuthorizeOrder(PayPalClient):
     def build_request_body():
         return {}
 
-    """This function can be used to authorize an approved order. Valid authorized order id should be 
-    passed as an argument to this function."""
+    """This function can be used to authorize an approved order. Valid authorized order id should be passed as an argument to this function."""
     def authorize_order(self, order_id, debug=False):
         """Method to authorize order using order_id"""
         request = OrdersAuthorizeRequest(order_id)

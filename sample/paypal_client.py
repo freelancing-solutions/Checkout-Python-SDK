@@ -32,9 +32,9 @@ class PayPalClient:
             if key.startswith("__") or key.startswith("_"):
                 continue
             result[key] = self.array_to_json_array(value) if isinstance(value, list) else\
-                        self.object_to_json(value) if not self.is_primittive(value) else\
-                         value
-        return result;
+                        self.object_to_json(value) if not self.is_primittive(value) else value
+        return result
+
     def array_to_json_array(self, json_array):
         result =[]
         if isinstance(json_array, list):
@@ -42,6 +42,7 @@ class PayPalClient:
                 result.append(self.object_to_json(item) if  not self.is_primittive(item) \
                               else self.array_to_json_array(item) if isinstance(item, list) else item)
         return result;
+
 
     def is_primittive(self, data):
         return isinstance(data, str) or isinstance(data, unicode) or isinstance(data, int)

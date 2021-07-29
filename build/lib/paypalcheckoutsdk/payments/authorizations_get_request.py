@@ -11,15 +11,15 @@ try:
 except ImportError:
     from urllib.parse import quote  # Python 3+
 
-
 class AuthorizationsGetRequest:
     """
     Shows details for an authorized payment, by ID.
     """
-
     def __init__(self, authorization_id):
         self.verb = "GET"
-        self.path = "/v2/payments/authorizations/{authorization_id}?".replace("{authorization_id}",
-                                                                              quote(str(authorization_id)))
-        self.headers = {"Content-Type": "application/json"}
+        self.path = "/v2/payments/authorizations/{authorization_id}?".replace("{authorization_id}", quote(str(authorization_id)))
+        self.headers = {}
+        self.headers["Content-Type"] = "application/json"
         self.body = None
+
+

@@ -11,8 +11,6 @@ try:
 except ImportError:
     from urllib.parse import quote  # Python 3+
 
-
-# noinspection PyDictCreation
 class RefundsGetRequest:
     """
     Shows details for a refund, by ID.

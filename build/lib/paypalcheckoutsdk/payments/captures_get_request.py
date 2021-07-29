@@ -11,7 +11,6 @@ try:
 except ImportError:
     from urllib.parse import quote  # Python 3+
 
-# noinspection PyDictCreation
 class CapturesGetRequest:
     """
     Shows details for a captured payment, by ID.

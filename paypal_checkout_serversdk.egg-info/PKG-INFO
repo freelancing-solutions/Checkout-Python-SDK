@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: paypal-checkout-serversdk
+Version: 1.0.0
+Summary: Python Rest SDK for PayPal Checkout
+Home-page: https://github.com/paypal/Checkout-Python-SDK/
+Author: https://developer.paypal.com
+Author-email: dl-paypal-checkout-api@paypal.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: SEE LICENSE IN https://github.com/paypal/Checkout-Python-SDK/blob/master/LICENSE
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Python Rest SDK for PayPal Checkout
+

@@ -11,8 +11,6 @@ try:
 except ImportError:
     from urllib.parse import quote  # Python 3+
 
-
-# noinspection PyDictCreation
 class AuthorizationsVoidRequest:
     """
     Voids, or cancels, an authorized payment, by ID. You cannot void an authorized payment that has been fully captured.

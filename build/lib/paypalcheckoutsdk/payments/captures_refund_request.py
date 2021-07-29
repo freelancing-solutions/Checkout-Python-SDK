@@ -11,7 +11,6 @@ try:
 except ImportError:
     from urllib.parse import quote  # Python 3+
 
-# noinspection PyDictCreation
 class CapturesRefundRequest:
     """
     Refunds a captured payment, by ID. For a full refund, include an empty payload in the JSON request body. For a partial refund, include an <code>amount</code> object in the JSON request body.
